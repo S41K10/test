@@ -1,10 +1,11 @@
 import csv
 
+time = input("Time: ").lower()
+
 print("-"*100)
 print("Data\tMandante\tVisitante")
-print("-"*100)
 
-with open("C:\\Users\\augus\OneDrive\Documentos\\archive\\campeonato-brasileiro-full.csv", 'r') as arquivo:
+with open("C:\\Users\\augus\OneDrive\Documentos\\archive\\campeonato-brasileiro-full.csv", 'r', encoding="utf-8") as arquivo:
 
     results = csv.reader(arquivo)
 
@@ -12,14 +13,13 @@ with open("C:\\Users\\augus\OneDrive\Documentos\\archive\\campeonato-brasileiro-
         tokens = line[0].split(';')
 
         data = tokens[2]
-        mandante = tokens[5]
-        visitante = tokens[6]
+        mandante = tokens[5].lower()
+        visitante = tokens[6].lower()
 
-        ano = data.split('-')[0];
-        
-        if(ano == "2014" or ano == "2015):
+        ano = data.split('-')[0]
+
+        if (ano == "2014" or ano == "2015") and (visitante == time or mandante == time):
             print("-"*100)
             print(f"{data}\t|{mandante}\t|{visitante}")
-
 
 
