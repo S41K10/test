@@ -15,7 +15,9 @@ with open("C:\\Users\\augus\OneDrive\Documentos\\archive\\campeonato-brasileiro-
         mandante = tokens[5]
         visitante = tokens[6]
 
-        if(data.split('-')[0] == "2014"):
+        ano = data.split('-')[0];
+        
+        if(ano == "2014" or ano == "2015):
             print("-"*100)
             print(f"{data}\t|{mandante}\t|{visitante}")
 
